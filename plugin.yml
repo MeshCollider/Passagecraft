@@ -1,0 +1,251 @@
+name: PassageCraft
+main: net.meshcollision.PassageCraft.PassageCraft
+version: 4
+author: MeshCollider
+
+commands:
+   passagecraft:
+      description: Base command for the PassageCraft plugin
+      usage: /<command>
+      permission: passagecraft.basic
+      permission-message: You don't have <permission>
+
+   pcscores:
+      description: Displays the Passagecraft scoreboard for the specified map
+      usage: /<command> [mapname]
+      permission: passagecraft.scores
+      permission-message: You don't have <permission>
+ 
+   pccreate:
+      description: Creates a new PassageCraft map
+      usage: /<command> [mapname]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+
+   pclobby:
+      description: Sets the location of the lobby for the specified map
+      usage: /<command> [mapname]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+
+   pcjoin:
+      description: Joins the specified PassageCraft map
+      usage: /<command> [mapname]
+      permission: passagecraft.join
+      permission-message: You don't have <permission>
+
+   pcvipjoin:
+      description: Joins the specified PassageCraft map irrelevant of its fullness
+      usage: /<command> [mapname]
+      permission: passagecraft.vipjoin
+      permission-message: You don't have <permission>
+
+   pcforcejoin:
+      description: Joins the specified PassageCraft map even if it is currently in progress
+      usage: /<command> [mapname]
+      permission: passagecraft.forcejoin
+      permission-message: You don't have <permission>
+
+   pcspawnpoint:
+      description: Sets the location of a specified spawn point in the specified map
+      usage: /<command> [mapname] [spawnpoint number]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+
+   pcspawnpoints:
+      description: Sets the location of all 4 spawn points in the specified map
+      usage: /<command> [mapname]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+
+   pcquit:
+      description: Quits the current map
+      usage: /<command>
+      permission: passagecraft.join
+      permission-message: You don't have <permission>
+
+   pchub:
+      description: Sets the hub of the world
+      usage: /<command>
+      permission: passagecraft.hub
+      permission-message: You don't have <permission>
+
+   pcprotect:
+      description: Turns editing mode on for the protecion region of the map
+      usage: /<command> [mapname]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+
+   pcnukeroom:
+      description: Turns editing mode on for the nukeroom of the map
+      usage: /<command> [mapname]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+
+   pcmaps:
+      description: Lists the created PassageCraft maps
+      usage: /<command>
+      permission: passagecraft.list
+      permission-message: You don't have <permission>
+
+   pcpublish:
+      description: Broadcasts a newly created map
+      usage: /<command> [mapname]
+      permission: passagecraft.publish
+      permission-message: You don't have <permission>
+
+   pcdelete:
+      description: Removes a specified map
+      usage: /<command> [mapname]
+      permission: passagecraft.delete
+      permission-message: You don't have <permission>
+
+   pcdetails:
+      description: Lists details of the specifed map
+      usage: /<command> [mapname]
+      permission: passagecraft.details
+      permission-message: You don't have <permission> 
+
+   pcgotohub:
+      description: Teleports to the HUB of the world
+      usage: /<command>
+      permission: passagecraft.tphub
+      permission-message: You don't have <permission>
+
+   pckit:
+      description: Sets the kit for the specified map
+      usage: /<command> [mapname] [kitname]
+      permission: passagecraft.setkit
+      permission-message: You don't have <permission>
+
+   pckits:
+      description: Lists the available kits
+      usage: /<command>
+      permission: passagecraft.list
+      permission-message: You don't have <permission>
+      
+   pckitdetails:
+      description: Lists the details of the specified kit
+      usage: /<command> [kitname]
+      permission: passagecraft.details
+      permission-message: You don't have <permission>
+
+   pcexplode:
+      description: Creates an explosion around the specified player
+      usage: /<command> [playername] [power]
+      permission: passagecraft.explode
+      permission-message: You don't have <permission>
+      
+   pcplayers:
+      description: Sets the min and max players allowed for a map
+      usage: /<command> [mapname] [minplayers] [maxplayers]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+      
+   pcjoinserver:
+      description: Joins the specified bungee server
+      usage: /<command> [server]
+      permission: passagecraft.create
+      permission-message: You don't have <permission>
+      
+   pctrap:
+      description: Sets a trap on the specified block
+      usage: /<command>
+      permission: passagecraft.trap
+      permission-message: You don't have <permission>
+ 
+permissions:
+  passagecraft.*:
+      description: Gives access to all passagecraft commands
+      children:
+          passagecraft.basic: true
+          passagecraft.scores: true
+          passagecraft.create: true
+          passagecraft.join: true
+          passagecraft.vipjoin: true
+          passagecraft.list: true
+          passagecraft.forcejoin: true
+          passagecraft.publish: true
+          passagecraft.delete: true
+          passagecraft.hub: true
+          passagecraft.details: true
+          passagecraft.tphub: true
+          passagecraft.breakprotected: true
+          passagecraft.placeprotected: true
+          passagecraft.setkit: true
+          passagecraft.explode: true
+          passagecraft.switchserver: true
+          passagecraft.trap: true
+      default: op
+
+  passagecraft.basic:
+      description: Basic Passagecraft command
+      default: true
+
+  passagecraft.scores:
+      description: Allows you to see the scores of a passagecraft map
+      default: true
+
+  passagecraft.tphub:
+      description: Allows you to teleport to the HUB of the world
+      default: op
+
+  passagecraft.join:
+      description: Allows you to join a passagecraft map
+      default: true
+
+  passagecraft.vipjoin:
+      description: Allows you to join a passagecraft map irrevelvant of its fullness
+      default: op
+
+  passagecraft.forcejoin:
+      description: Allows you to force join a passagecraft map currently in progress
+      default: op
+
+  passagecraft.create:
+      description: Allows you to create a new passagecraft map
+      default: op
+
+  passagecraft.list:
+      description: Allows you to view the created maps
+      default: op
+
+  passagecraft.publish:
+      description: Allows you to broadcast a newly created map
+      default: op
+
+  passagecraft.delete:
+      description: Allows you to delete a passagecraft map
+      default: op
+
+  passagecraft.hub:
+      description: Allows you to set the hub of the world
+      default: op
+
+  passagecraft.details:
+      description: Allows you to list details about a specific map
+      default: op
+
+  passagecraft.breakprotected:
+      description: Allows you to break a block in a protected region
+      default: op
+
+  passagecraft.placeprotected:
+      description: Allows you to place a block in a protected region
+      default: op
+
+  passagecraft.setkit:
+      description: Allows you to set the kit for a map
+      default: op
+
+  passagecraft.explode:
+      description: Allows you to create an explosion
+      default: op
+
+  passagecraft.switchserver:
+      description: Allows you to switch between servers
+      default: true
+      
+  passagecraft.trap:
+      description: Allows you to set a trap on the current block
+      default: op

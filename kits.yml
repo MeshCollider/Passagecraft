@@ -1,0 +1,6 @@
+default:
+   name: "Default"
+   items: "272-1,298-1"
+killstreak:
+   name: "Killstreak"
+   items: "267-1,306-1"
